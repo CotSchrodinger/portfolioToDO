@@ -7,12 +7,17 @@ exports.config = {
       show: true
     }
   },
+  "plugins": {
+    "allure": {}
+},
   include: {
     I: './steps_file.js',
     mainPage: './pages/main.js'
   },
   bootstrap: null,
   mocha: {},
-  name: 'todo',
+  name: 'todo'
+
+  
   
 }

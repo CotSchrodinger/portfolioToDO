@@ -48,13 +48,10 @@ Scenario('User delete an active task', ()=>{
    
 
 });
-Scenario.only('User mark all task comleted', ()=>{
+Scenario('User mark all task comleted', ()=>{
     mainPage.addTask('The task 1');
     mainPage.addTask('The task 2');
     mainPage.addTask('The task 3');
     I.click('label[for="toggle-all"]')
-    
-
-
 
 });
