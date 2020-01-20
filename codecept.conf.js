@@ -4,7 +4,7 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: 'http://todomvc.com/examples/vue',
-      show: true
+      show: false
     }
   },
   "plugins": {

@@ -6,9 +6,11 @@ module.exports = {
     field:'input[placeholder="What needs to be done?"]',
     rbComplete: 'ul>li.todo input[type="checkbox"]',
     clearCompleted: 'button.clear-completed',
+    deleteTask: 'button.destroy',
     allTasks: 'ul.filters>li>a[href="#/all"]',
     activeTasks: 'ul.filters li>a[href="#/active"]',
-    completedTasks: 'ul.filters li>a[href="#/completed"]'
+    completedTasks: 'ul.filters li>a[href="#/completed"]',
+    completeAllTask: 'label[for="toggle-all"]'
 
   },
 
@@ -22,8 +24,26 @@ module.exports = {
     I.click(this.elements.rbComplete);
   }, 
 
-  deleteTask(){
+  deleteTasks(){
     I.click(this.elements.clearCompleted);
+  },
+
+  deleteTask(){
+    I.click('This task will be delete');
+    I.click(this.elements.deleteTask);
+  },
+
+  completeAllTask(){
+    I.click(this.elements.completeAllTask);
+  },
+
+
+  editTask(){
+    I.doubleClick('The Taske 4 is added')
+    I.pressKey('Control', 'a');
+    I.fillField({css: ':focus'}, 'The Task 4 edited');
+    I.pressKey('Enter')
   }
+
 
 }
