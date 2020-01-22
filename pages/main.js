@@ -10,7 +10,9 @@ module.exports = {
     allTasks: 'ul.filters>li>a[href="#/all"]',
     activeTasks: 'ul.filters li>a[href="#/active"]',
     completedTasks: 'ul.filters li>a[href="#/completed"]',
-    completeAllTask: 'label[for="toggle-all"]'
+    completeAllTask: 'label[for="toggle-all"]',
+    activeTaskList: 'a[href="#/active"]',
+    compeletedTaskList: 'ul > li.todo.completed'
 
   },
 
@@ -39,10 +41,18 @@ module.exports = {
 
 
   editTask(){
-    I.doubleClick('The Taske 4 is added')
+    I.doubleClick('The Taske 4 is added');
     I.pressKey('Control', 'a');
     I.fillField({css: ':focus'}, 'The Task 4 edited');
-    I.pressKey('Enter')
+    I.pressKey('Enter');
+  },
+  
+  turnActiveList(){
+    I.click(this.elements.activeTaskList)
+
+  },
+  turnCompletedList(){
+    I.click(this.elements.compeletedTaskList);
   }
 
 
